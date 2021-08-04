@@ -114,12 +114,12 @@
               // let span = createNode('span');
     
     
-              img.src = `./standard/${blog.entry_image}`
+              let imgSrc = `./standard/${blog.entry_image}`
               // span.innerHTML = ` ${blog.time_stamp}  ${blog.title}`;
               // append(li, img);
               // append(li, span);
               // append(ul, li);
-              let html = `<div class="blogPost col"><img class="blogImages" src="${img.src}"><p class="blogTitle"><small class="text-muted">${blog.time_stamp}</small></p><h6>${blog.title}</h6></div>`
+              let html = `<div class="blogPost col"><img class="blogImages" src="${imgSrc}"><p class="blogTitle"><small class="text-muted">${blog.time_stamp}</small></p><h6>${blog.title}</h6></div>`
               blogs.appendChild(html);
 
 
