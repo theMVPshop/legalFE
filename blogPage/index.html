@@ -103,26 +103,15 @@
             }
     
             response.json().then(function(data) {
-              console.log("data ", data);
-              // let blog = data.results;
-        
-     
-              return data.map(function(blog) {
       
-              // let div = createNode('li');
-              // let img = createNode('img');  
-              // let span = createNode('span');
-    
-    
-              let imgSrc = `./standard/${blog.entry_image}`
-              // span.innerHTML = ` ${blog.time_stamp}  ${blog.title}`;
-              // append(li, img);
-              // append(li, span);
-              // append(ul, li);
-              let html = `<div class="blogPost col"><img class="blogImages" src="${imgSrc}"><p class="blogTitle"><small class="text-muted">${blog.time_stamp}</small></p><h6>${blog.title}</h6></div>`
-              blogs.appendChild(html);
-
-
+              return data.map(function(blog) {
+                let day = blog.time_stamp.slice(0,10).split("-")[2];
+                let month = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"][parseInt(blog.time_stamp.slice(0,10).split("-")[1])];
+                let year = blog.time_stamp.slice(0,10).split("-")[0];
+                let imgSrc = `../standard/${blog.entry_image}`
+                let html = `<div class="blogPost"><img class="blogImages" src="${imgSrc}"><p class="blogTitle"><small class="text-muted">${month} ${day}, ${year}</small></p><h6>${blog.title}</h6></div>`
+                
+                blogs[0].innerHTML += html;
 
                })
             });

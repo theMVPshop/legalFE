@@ -35,18 +35,14 @@
     background: none;
 }
 .blog {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin:auto;
     padding-top: 50px;
-    padding-bottom: 5%;
-    justify-content: center;
-    /* margin: 0 auto; */
-    /* padding-left: 7%; */
+    width: 80%;
 }
 .blogPost {
-    width: 60%;
-    margin: auto;
-    padding-bottom: 3%;
+    padding-bottom: 15%;
 }
 .blogImages {
     display: block;
